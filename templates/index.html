@@ -1,0 +1,100 @@
+
+{% extends '_base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- content section; blogposts  -->
+<div class="container-fluid">
+  <div class="row header">
+
+    <div class="col-sm-2"></div>
+    <div class="col-lg-8 profile">
+        <div class="row profile-top">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4">
+            <div class="flex-pic">
+              <img id="header-profile-pic" src="{% static 'images/IMG_8750 (3).jpeg' %}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-4"></div>
+        </div>
+        <div class="row profile-bottom">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4">
+            <div class="flex-pic">
+              <h4 style="font-weight: bold;">Cameron Byroad</h4>  
+            </div>
+          </div>
+          <div class="col-lg-4"></div>
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+  <div class="content row">
+    <hr>
+    <div class="col-sm-1">
+    </div>
+    <div class="col-lg-7" id="home-blog-content">
+          <div class="flex-row blog-container">   
+            <div class="row blog-card" style="width: auto;">
+              <div class="col-lg-5 blog-card-image">
+               <img src="{% static 'images/Ocean.jpeg' %}" class="border rounded" alt="...">
+              </div>
+              <div class="col-lg-7">
+                  <div class="card-content">
+                    <h3 class="">A Beautiful Day at Cinque Terre</h3>
+                    <span> <small>December 11, 2022</small></span><small>Last updated 3 min ago</small></span><br>
+                  </div>
+               <div class="blog-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+              </div>
+          </div>
+            <div class="row blog-card" style="width: auto;">
+                 <div class="col-lg-5 blog-card-image">
+                  <img src="{% static 'images/cityofkotor.jpeg' %}" class="border rounded" alt="...">
+                 </div>
+                 <div class="col-lg-7">
+                  <div class="card-content">
+                    <h3 class=""> The City of Montenegro</h3>
+                    <span> <small>December 11, 2022</small></span><small>Last updated 3 min ago</small></span><br>
+                  </div>
+               <div class="blog-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    <div class="col-sm-3" style="margin: 0px 0px 0px 0px;">
+          <div class="side-cards rounded" id="recent-posts">
+              <h4>Recent Posts</h4>
+                  <a href="">When in Rome</a><br>
+                  <a href="">Rolling through Greece</a><br>
+                  <a href="">Castles in Dubrovnik</a><br>
+                  <a href="">Landing Cheap Flight Prices</a><br>
+                  <br>
+                  <br>
+          </div>
+          
+          <div class="side-cards rounded">
+            <h5>Categories</h5>
+                <a href="">Travel</a><br>
+                <a href="">Python</a><br>
+                <a href="">Web Dev</a><br>
+                <a href="">Places to Visit</a><br>
+          </div>
+        
+        <div class="side-cards rounded">
+          <h4>Tags</h4>
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+    </div>
+</div>
+
+{% endblock content %}
