@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login
+from django.contrib.auth import login, get_user_model, authenticate
 from django.contrib import messages
+from django.urls import reverse
 
 # Create your views here.
 
@@ -26,3 +27,25 @@ def signUpPage(request):
     context = {'form':form}
     return render(request, 'accounts/signup.html', context)
 
+
+def loginPage(request):
+    form = forms.LoginForm()
+
+    if request.method=='POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        try:
+            get_user_model().objects.get(username=username)
+        except:
+            messages.error(request, 'This username is already taken')
+        
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect(reverse('home'))
+        else:
+            messages.error(request, 'There was an error logging you in')            
+
+    context = {'form':form}
+    return render(request, 'accounts/login.html', context)

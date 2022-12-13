@@ -11,7 +11,8 @@
 
 
 .nav-container{
-    height: 50px;
+    height: 75px;
+    background-color: aliceblue;
 }
 
 .nav-link-container{
@@ -28,8 +29,8 @@
 /* Header */
 
 .header{
-    height: 250px;
-    border-bottom: black;
+    height: 200px;
+    background-color: #ffffff;
 }
 
 .profile-bottom{
@@ -38,7 +39,7 @@
 
 #header-profile-pic{
     height: auto;
-    width: 100px;
+    width: 60px;
     border-radius: 50%;
     text-align: center;
     margin-top: 15px;
@@ -112,7 +113,7 @@ img{
     border: 1px solid gainsboro;
     padding: 15px;
     margin: 25px;
-
+    background-color: #ffffff;
 }
 
 
@@ -126,3 +127,8 @@ img{
 }
 
 
+
+/* single blog post */
+.single-blog-post{
+    margin: 25px;
+}

@@ -14,7 +14,7 @@
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Red+Hat+Display">
     </head>
-    <body style="font-family: 'Red Hat Display', sans-serif;">
+    <body style="font-family: 'Red Hat Display', sans-serif; background-color: aliceblue;">
         <!-- navbar  -->
         <div class="row nav-container">
             <div class="col-sm-1"></div>
@@ -26,12 +26,15 @@
                             <li class="nav-link">Blog</li>
                             <li class="nav-link">About</li>
                             <li class="nav-link">Contact</li>
+                            {% if user.is_authenticated %}
+                                <li class="nav-link">Welcome {{user}}</li>
+                            {% endif %}
                         </ul>
                     </nav>
                 </div>
             <div class="col-sm-1"></div>
         </div>
-        <hr>
+        <hr style="margin: 0px;">
         {% block content %}
 
 
