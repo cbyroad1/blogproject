@@ -27,8 +27,11 @@
                             <li class="nav-link">About</li>
                             <li class="nav-link">Contact</li>
                             {% if user.is_authenticated %}
-                                <li class="nav-link">Welcome {{user}}</li>
+                            <li class="nav-link"><a href="{% url 'logout' %}" style="text-decoration: none;">Logout</a></li>
+                            {% else %}
+                            <li class="nav-link"><a href="{% url 'login' %}" style="text-decoration: none;">Login</a></li>
                             {% endif %}
+
                         </ul>
                     </nav>
                 </div>

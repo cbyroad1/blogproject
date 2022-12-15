@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, get_user_model, authenticate
+from django.contrib.auth import login, get_user_model, authenticate, logout
 from django.contrib import messages
 from django.urls import reverse
 
@@ -49,3 +49,9 @@ def loginPage(request):
 
     context = {'form':form}
     return render(request, 'accounts/login.html', context)
+
+
+def logout_user(request):
+
+    logout(request)
+    return redirect(reverse('home'))
