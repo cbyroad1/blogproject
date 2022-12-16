@@ -3,32 +3,25 @@
 {% block content %}
 
      <!-- content -->
-
+     {% for post in post %}
         <div class="container-fluid">
             <div class="row single-blog-post">
                 <div class="col-sm-3"></div>
                     <div class="col-lg-6">
                         <div class=" " style="width: auto;">
-                            <h2 class="" style="text-align: center;">A Beautiful Day in Cinque Terre</h2>
+                            <h2 class="" style="text-align: center;">{{post.title}}</h2>
                             <br>
                             <img src="{% static 'images/cityofkotor.jpeg' %}" class="" alt="...">
                             <div class="">
-                            <div class="flex-row" style="margin: 20px;"><img class="profile-pic" src="images/IMG_8750 (1).jpeg" alt=""><span>Cameron Byroad</span>
+                            <div class="flex-row" style="margin: 20px;"><img class="profile-pic" src="images/IMG_8750 (1).jpeg" alt=""><span>{{post.author}}</span>
                             <hr style="margin: 10px;">
-                            <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                .......
-                                <br>
-                                <br>
-                                <hr>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Justo eget magna fermentum iaculis eu. Euismod elementum nisi quis eleifend quam adipiscing vitae proin. Consectetur libero id faucibus nisl. Vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Blandit volutpat maecenas volutpat blandit. Habitant morbi tristique senectus et netus et malesuada. Turpis tincidunt id aliquet risus feugiat. Id ornare arcu odio ut sem nulla pharetra diam sit. In pellentesque massa placerat duis ultricies. Magna fringilla urna porttitor rhoncus dolor purus non enim. Volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris. Arcu vitae elementum curabitur vitae. Arcu non sodales neque sodales ut etiam sit amet nisl. Ornare lectus sit amet est placerat. Scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt. Maecenas volutpat blandit aliquam etiam erat velit scelerisque. Nunc faucibus a pellentesque sit amet porttitor eget dolor morbi. At consectetur lorem donec massa.
-                                Porttitor eget dolor morbi non arcu. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Non pulvinar neque laoreet suspendisse interdum. Elit ut aliquam purus sit amet luctus venenatis. Ut pharetra sit amet aliquam. Fermentum leo vel orci porta non pulvinar neque laoreet suspendisse. Nec feugiat nisl pretium fusce. Tristique magna sit amet purus gravida quis blandit. Potenti nullam ac tortor vitae purus. At consectetur lorem donec massa. Pretium nibh ipsum consequat nisl vel pretium. Cras sed felis eget velit. Amet risus nullam eget felis eget. Sed velit dignissim sodales ut eu. Erat nam at lectus urna duis. Sagittis id consectetur purus ut. Nibh cras pulvinar mattis nunc sed blandit libero volutpat.
-                            </p>
+                            <p class="">{{post.content|safe}}</p>
                             </div>
-                        </div>   
+                            </div>   
+                        </div>
+                            <div class="col-sm-3"></div>
                     </div>
-                <div class="col-sm-3"></div>
             </div>
         </div>
-        </div>
-
+        {% endfor %}
 {% endblock content %}

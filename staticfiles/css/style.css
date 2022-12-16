@@ -1,0 +1,134 @@
+
+/* navbar */
+
+/* .header-flex{
+    display: flex;
+    justify-content: right;
+    padding: 0px;
+    margin-bottom: 0px;
+    height: min-content;
+} */
+
+
+.nav-container{
+    height: 75px;
+    background-color: aliceblue;
+}
+
+.nav-link-container{
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-nav li{
+    font-size: larger;
+    margin: 0px 10px 0px 10px;
+}
+
+
+/* Header */
+
+.header{
+    height: 200px;
+    background-color: #ffffff;
+}
+
+.profile-bottom{
+    height: 50%;
+}
+
+#header-profile-pic{
+    height: auto;
+    width: 60px;
+    border-radius: 50%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.flex-pic{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+/* Blog Content */
+
+.content{
+    display: flex;
+}
+
+.blog-container{
+    margin: 20px;
+}
+
+.blog-card{
+    height: 250px;
+    margin: 50px 0px 50px 0px;
+}
+
+.blog-card-image{
+    height: max-content;
+    width: max-content;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+.card-content{
+    text-align: center;
+}
+
+.card-content small{
+    margin: 10px;
+    text-align: center;
+}
+
+.card-content h3{
+    font-weight:bold;
+    text-align: center;
+}
+
+.blog-description{
+    padding: 20px;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.profile-pic{
+    height: auto;
+    width: 50px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+
+/* Side Content  */
+.side-cards{
+    border: 1px solid gainsboro;
+    padding: 15px;
+    margin: 25px;
+    background-color: #ffffff;
+}
+
+
+/* Sign Up Page */
+.myform{
+    margin-bottom: 25px;
+}
+
+.signup-form{
+    width: 275px;
+}
+
+
+
+/* single blog post */
+.single-blog-post{
+    margin: 25px;
+}
