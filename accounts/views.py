@@ -38,7 +38,7 @@ def loginPage(request):
         try:
             get_user_model().objects.get(username=username)
         except:
-            messages.error(request, 'This username is already taken')
+            messages.error(request, 'There was an error logging you in')
         
         user = authenticate(request, username=username, password=password)
         if user is not None:

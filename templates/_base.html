@@ -14,7 +14,7 @@
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Red+Hat+Display">
     </head>
-    <body style="font-family: 'Red Hat Display', sans-serif; background-color: aliceblue;">
+    <body style="font-family: 'Red Hat Display', sans-serif; ">
         <!-- navbar  -->
         <div class="row nav-container">
             <div class="col-sm-1"></div>
@@ -27,9 +27,9 @@
                             <li class="nav-link">About</li>
                             <li class="nav-link">Contact</li>
                             {% if user.is_authenticated %}
-                            <li class="nav-link"><a href="{% url 'logout' %}" style="text-decoration: none;">Logout</a></li>
+                            <li class="nav-link"><a href="{% url 'logout' %}" style="color: inherit; text-decoration: none; ">Logout</a></li>
                             {% else %}
-                            <li class="nav-link"><a href="{% url 'login' %}" style="text-decoration: none;">Login</a></li>
+                            <li class="nav-link"><a href="{% url 'login' %}" style="color: inherit; text-decoration: none; ">Login</a></li>
                             {% endif %}
 
                         </ul>
@@ -38,6 +38,9 @@
             <div class="col-sm-1"></div>
         </div>
         <hr style="margin: 0px;">
+        <div class="row header" style="">
+            <div class="col-lg-12"> <img id='banner-pic' src="{% static 'images/newcameron.jpeg' %}" alt=""> </div>
+        </div>
         {% block content %}
 
 

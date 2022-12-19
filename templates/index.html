@@ -5,99 +5,84 @@
 {% block content %}
 <!-- content section; blogposts  -->
 <div class="container-fluid">
-  <div class="row header">
+  <div class="content row">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-lg-6" id="home-blog-content">
+            {% for post in posts %}
+            <div class="blog-single-post pb-60">
+              <div class="post-content">
+                <div class="post-titel-author pt-30 pb-15">
+                  <h3><a href="{% url 'view-post' post.id %}">{{post.title}}</a></h3>
+                  <span>{{post.date_created}}   /  <a href="#">By : {{post.author}}</a></span>
+                </div>
+                <div class="post-srt-content pb-20 border-bottom">
+                  <p>{{post.content|truncatechars:250|safe}}</p>
+                  <a href="{% url 'view-post' post.id %}">CONTINUE READING <i class="icofont icofont-long-arrow-right"></i></a>
+                </div>
+                <div class="post-info pt-15">
+                  <span class="post-txt mr-25">
+                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i>20 Like</a>
+                  </span>
+                  <span class="post-txt mr-25">
+                    <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>08 Comments</a>
+                  </span>
+                  <span class="post-txt mr-25">
+                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i>50 Shares</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+    <div class="col-sm-2" style="margin: 0px 0px 0px 0px;">
+          	<!-- Choose Category Area Start -->
+							<div class="choose-category border-bottom  pt-60">
+								<h4>Choose Categories</h4>
+								<div class="category-list">
+									<ul>
+										<li>
+											<a href="#">Adventure<span>25</span></a>
+										</li>
+										<li>
+											<a href="#">Life Style <span>35</span></a>
+										</li>
+										<li>
+											<a href="#">Travel<span>52</span></a>
+										</li>
+										<li>
+											<a href="#">Fashion<span>45</span></a>
+										</li>
+										<li>
+											<a href="#">Music<span>28</span></a>
+										</li>
+										<li>
+											<a href="#">Food & Drinks <span>30</span></a>
+										</li>
+										<li>
+											<a href="#">Stories<span>20</span></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- Choose Category Area End -->
+            
+          <!-- Choose Category Area Start -->
+							<div class="choose-category border-bottom  pt-60">
+								<h4>Recent Posts</h4>
+								<div class="category-list">
+									<ul>
+                  {% for post in posts %}
+										<li>
+											<a href="#">{{post.title}}</a>
+										</li>					
+                  {% endfor %}						
+									</ul>
+								</div>
+							</div>
+							<!-- Choose Category Area End -->
 
     <div class="col-sm-2"></div>
-    <div class="col-lg-8 profile">
-        <!-- <div class="row profile-top">
-          <div class="col-lg-4"></div>
-          <div class="col-lg-4">
-            <div class="flex-pic">
-              <img id="header-profile-pic" src="{% static 'images/IMG_8750 (3).jpeg' %}" alt="">
-            </div>
-          </div>
-          <div class="col-lg-4"></div>
-        </div>
-        <div class="row profile-bottom">
-          <div class="col-lg-4"></div>
-          <div class="col-lg-4">
-            <div class="flex-pic">
-              <h4 style="font-weight: bold;">Cameron Byroad</h4>  
-            </div>
-          </div>
-          <div class="col-lg-4"></div>
-        </div> -->
-        <h1>Django Blog</h1>
-    </div>
-    <div class="col-sm-2"></div>
-  </div>
-  <div class="content row">
-    <hr style="margin: 0px;">
-    <div class="col-sm-1">
-    </div>
-    <div class="col-lg-7" id="home-blog-content">
-          <div class="flex-row blog-container">
-            {% for post in posts %}
-            <div class="row blog-card" style="width: auto;">
-              <div class="col-lg-5 blog-card-image">
-               <img src="{% static 'images/Ocean.jpeg' %}" class="border rounded" alt="...">
-              </div>
-              <div class="col-lg-7">
-                  <div class="card-content">
-                    <h3 class=""><a href="{% url 'view-post' post.id %}">{{post.title}}</a></h3>
-                    <span> <small>{{post.date_created}}</small></span><small>Last updated 3 min ago</small></span><br>
-                  </div>
-               <div class="blog-description">
-                <p>{{post.content|safe|truncatechars:150}}</p>
-                </div>
-              </div>
-          </div>
-            {% endfor %}
-            <!-- <div class="row blog-card" style="width: auto;">
-                 <div class="col-lg-5 blog-card-image">
-                  <img src="{% static 'images/cityofkotor.jpeg' %}" class="border rounded" alt="...">
-                 </div>
-                 <div class="col-lg-7">
-                  <div class="card-content">
-                    <h3 class=""> The City of Montenegro</h3>
-                    <span> <small>December 11, 2022</small></span><small>Last updated 3 min ago</small></span><br>
-                  </div>
-               <div class="blog-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-              </div>
-            </div> -->
-          </div>
-        </div>
-    <div class="col-sm-3" style="margin: 0px 0px 0px 0px;">
-          <div class="side-cards rounded" id="recent-posts">
-              <h4>Recent Posts</h4>
-                  <a href="">When in Rome</a><br>
-                  <a href="">Rolling through Greece</a><br>
-                  <a href="">Castles in Dubrovnik</a><br>
-                  <a href="">Landing Cheap Flight Prices</a><br>
-                  <br>
-                  <br>
-          </div>
-          
-          <div class="side-cards rounded">
-            <h5>Categories</h5>
-                <a href="">Travel</a><br>
-                <a href="">Python</a><br>
-                <a href="">Web Dev</a><br>
-                <a href="">Places to Visit</a><br>
-          </div>
-        
-        <div class="side-cards rounded">
-          <h4>Tags</h4>
-          <br>
-          <br>
-          <br>
-          <br>
-        </div>
-    </div>
-    <div class="col-sm-1"></div>
     </div>
 </div>
-
 {% endblock content %}

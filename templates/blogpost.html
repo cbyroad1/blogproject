@@ -11,9 +11,8 @@
                         <div class=" " style="width: auto;">
                             <h2 class="" style="text-align: center;">{{post.title}}</h2>
                             <br>
-                            <img src="{% static 'images/cityofkotor.jpeg' %}" class="" alt="...">
                             <div class="">
-                            <div class="flex-row" style="margin: 20px;"><img class="profile-pic" src="images/IMG_8750 (1).jpeg" alt=""><span>{{post.author}}</span>
+                            <div class="flex-row" style="margin: 20px;"><img class="profile-pic" src="images/IMG_8750 (1).jpeg" alt=""><span>By: {{post.author}}</span>
                             <hr style="margin: 10px;">
                             <p class="">{{post.content|safe}}</p>
                             </div>
