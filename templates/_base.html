@@ -11,35 +11,36 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Red+Hat+Display">
     </head>
     <body style="font-family: 'Red Hat Display', sans-serif; ">
         <!-- navbar  -->
         <div class="row nav-container">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-5 d-flex align-self-center"> <h2 class="" style="margin-bottom: 0px;"></h2></div>
-                <div class="col-lg-5 nav-link-container">
+            <div class="col-sm-2"></div>
+                <div class="col-lg-8 nav-link-container">
                     <nav class="navbar navbar-expand-lg navbar-light justify-content-end">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-link">Home</li>
+                            <li class="nav-link"><a href="{% url 'home' %}" style="color: inherit; text-decoration: none;">Home</a></li>
                             <li class="nav-link">Blog</li>
-                            <li class="nav-link">About</li>
                             <li class="nav-link">Contact</li>
                             {% if user.is_authenticated %}
                             <li class="nav-link"><a href="{% url 'logout' %}" style="color: inherit; text-decoration: none; ">Logout</a></li>
                             {% else %}
                             <li class="nav-link"><a href="{% url 'login' %}" style="color: inherit; text-decoration: none; ">Login</a></li>
                             {% endif %}
-
                         </ul>
+                        </div>
                     </nav>
                 </div>
-            <div class="col-sm-1"></div>
+            <div class="col-sm-2"></div>
         </div>
         <hr style="margin: 0px;">
-        <div class="row header" style="">
-            <div class="col-lg-12"> <img id='banner-pic' src="{% static 'images/newcameron.jpeg' %}" alt=""> </div>
+        <div class="row header">
+            <div class="col-lg-12 banner-container"> <img id='banner-pic' src="{% static 'images/newcameron.jpeg' %}" alt=""> </div>
         </div>
         {% block content %}
 
