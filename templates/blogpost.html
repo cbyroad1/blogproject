@@ -12,7 +12,13 @@
                             <h2 class="" style="text-align: center;">{{post.title}}</h2>
                             <br>
                             <div class="">
-                            <div class="flex-row" style="margin: 20px;"><img class="profile-pic" src="images/IMG_8750 (1).jpeg" alt=""><span>By: {{post.author}}</span>
+                            <div class="flex-row" style="margin: 20px;">
+                                <img class="profile-pic" src="images/IMG_8750 (1).jpeg" alt="">
+                                <span>By: {{post.author}}</span>
+                                {% if request.user.username == author %}
+                                <span>Edit</span>
+                                <span><a href="{% url 'delete-post' post.id %}">Delete</a></span>
+                                {% endif %}
                             <hr style="margin: 10px;">
                             <p class="">{{post.content|safe}}</p>
                             </div>
@@ -20,6 +26,7 @@
                         </div>
                             <div class="col-sm-3"></div>
                     </div>
+
             </div>
         </div>
         {% endfor %}
