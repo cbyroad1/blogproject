@@ -9,6 +9,7 @@
     <div class="col-sm-2">
     </div>
     <div class="col-lg-6" id="home-blog-content">
+		{% if posts %}
             {% for post in posts %}
             <div class="blog-single-post pb-60">
               <div class="post-content">
@@ -34,6 +35,7 @@
               </div>
             </div>
           {% endfor %}
+		{% endif %}
         </div>
     <div class="col-sm-2" style="margin: 0px 0px 0px 0px;">
 							<div class="choose-category border-bottom  pt-60">
