@@ -15,6 +15,7 @@
               <div class="post-content">
                 <div class="post-titel-author pt-30 pb-15">
                   <h3><a href="{% url 'view-post' post.id %}">{{post.title}}</a></h3>
+				  <small>In {{post.category}}</small><br>
                   <span>{{post.date_created}}   /  <a href="#">By : {{post.author}}</a></span>
                 </div>
                 <div class="post-srt-content pb-20 border-bottom">
@@ -42,27 +43,11 @@
 								<h4>Choose Categories</h4>
 								<div class="category-list">
 									<ul>
+										{% for category in categories %}
 										<li>
-											<a href="#">Adventure<span>25</span></a>
+											<a href="#">{{category}}<span></span></a>
 										</li>
-										<li>
-											<a href="#">Life Style <span>35</span></a>
-										</li>
-										<li>
-											<a href="#">Travel<span>52</span></a>
-										</li>
-										<li>
-											<a href="#">Fashion<span>45</span></a>
-										</li>
-										<li>
-											<a href="#">Music<span>28</span></a>
-										</li>
-										<li>
-											<a href="#">Food & Drinks <span>30</span></a>
-										</li>
-										<li>
-											<a href="#">Stories<span>20</span></a>
-										</li>
+										{% endfor %}
 									</ul>
 								</div>
 							</div>

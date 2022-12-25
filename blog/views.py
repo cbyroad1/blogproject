@@ -5,7 +5,7 @@ from .forms import BlogPostForm
 from .models import BlogPost
 
 def createPost(request):
-    form = BlogPostForm()
+    form = BlogPostForm()        
 
     if request.method == 'POST':
         form = BlogPostForm(request.POST)

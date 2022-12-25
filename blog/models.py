@@ -10,7 +10,7 @@ class BlogPost(models.Model):
     content = RichTextField(blank=True, null=True)
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
-    category = models.ForeignKey('Category', on_delete=models.CASCADE, null=True)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, null=True, blank=False)
 
     def __str__(self):
         return self.title

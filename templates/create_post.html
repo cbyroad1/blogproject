@@ -9,11 +9,11 @@
     <div class="col-sm-6 justify-content-center">
         <h3>Create your Blog Post below</h3>
             <div class="">  
-                <form method="post">
+                <form class="myform" method="post">
                     {% csrf_token %}
                     {{form.media}}
                     {{form|crispy}}
-                    <div class="myform"><button class="btn btn-primary">Post</button></div>  
+                    <div class=""><button class="btn btn-primary">Post</button></div>  
                 </form>
             </div>
     </div>
