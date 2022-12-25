@@ -21,3 +21,10 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Comments(models.Model):
+    comment = models.TextField()
+    post = models.ForeignKey('BlogPost', on_delete=models.CASCADE)
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    
