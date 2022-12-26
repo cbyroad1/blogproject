@@ -3,7 +3,6 @@
 {% block content %}
 
      <!-- content -->
-     {% for post in post %}
         <div class="container-fluid">
             <div class="row single-blog-post">
                 <div class="col-sm-3"></div>
@@ -21,13 +20,23 @@
                                 {% endif %}
                             <hr style="margin: 10px;">
                             <p class="">{{post.content|safe}}</p>
+                            <br>
+                            <div class="comment-section">
+                                <h5>Comments</h5>
+                                <hr>
+                                {% for comment in comments %}
+                                <div class="individual-comment">
+                                    <small>By: {{comment.author}}</small>
+                                    <p>{{comment.comment}}</p>
+                                </div>
+                                {% endfor %}
+                                <hr>
                             </div>
-                            </div>   
+                            </div>
+                            </div> 
                         </div>
                             <div class="col-sm-3"></div>
                     </div>
-
             </div>
         </div>
-        {% endfor %}
 {% endblock content %}
