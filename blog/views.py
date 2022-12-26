@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 # Create your views here.
 from .forms import BlogPostForm
-from .models import BlogPost, Comments
+from .models import BlogPost, Category
 
 def createPost(request):
     form = BlogPostForm()        
@@ -42,3 +42,10 @@ def deletePost(request, pk):
 
     context = {'post':post, 'author':author}
     return render(request, 'delete_post.html', context)
+
+def viewCategory(request, pk):
+    category = Category.objects.get(id=pk)
+
+    
+    context = {'category':category}
+    return render(request, 'categories.html', context)
