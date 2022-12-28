@@ -45,7 +45,7 @@ def deletePost(request, pk):
 
 def viewCategory(request, pk):
     category = Category.objects.get(id=pk)
+    posts = category.blogpost_set.all()
 
-    
-    context = {'category':category}
+    context = {'category':category, 'posts':posts}
     return render(request, 'categories.html', context)
