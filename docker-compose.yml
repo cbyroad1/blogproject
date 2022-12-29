@@ -10,6 +10,10 @@ services:
       - 8000:8000
     depends_on:
       - db
+    environment:   
+    # if a dollar sign appears in the key - ensure to place another dollar sign to avoid errors with docker assigning variables
+      - "DJANGO_SECRET_KEY=django-insecure-(n1rf_6i097*+2e$$e)7deh59ohu=*&6!_ot=e56uudli%$$qn%d"
+      - "DJANGO_DEBUG=True"
   
   db:
     image: postgres:13
