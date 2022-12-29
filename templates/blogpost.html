@@ -14,7 +14,7 @@
                             <div class="flex-row" style="margin: 20px;">
                                 <img class="profile-pic" src="images/IMG_8750 (1).jpeg" alt="">
                                 <span>By: {{post.author}}</span>
-                                {% if request.user.username == author %}
+                                 {% if request.user.username == author %}
                                 <span>Edit</span>
                                 <span><a href="{% url 'delete-post' post.id %}">Delete</a></span>
                                 {% endif %}

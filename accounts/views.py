@@ -2,13 +2,14 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, get_user_model, authenticate, logout
 from django.contrib import messages
 from django.urls import reverse
+from django.contrib.auth.models import Group
 
 # Create your views here.
 
 from . import forms
 
 def signUpPage(request):
-    
+    general_group = Group.objects.get(name="General")
     form = forms.CustomUserCreationForm()
 
     if request.method == 'POST':
@@ -17,8 +18,9 @@ def signUpPage(request):
             user = form.save(commit=False)
             user.username = user.username.lower()
             user.save()
+            general_group.user_set.add(user)
             login(request, user)
-            print('sucess')
+            print('success')
             return redirect('home')
             
         else:
