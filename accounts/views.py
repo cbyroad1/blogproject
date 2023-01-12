@@ -9,7 +9,6 @@ from django.contrib.auth.models import Group
 from . import forms
 
 def signUpPage(request):
-    general_group = Group.objects.get(name="General")
     form = forms.CustomUserCreationForm()
 
     if request.method == 'POST':
@@ -18,6 +17,7 @@ def signUpPage(request):
             user = form.save(commit=False)
             user.username = user.username.lower()
             user.save()
+            general_group = Group.objects.get(name="General") 
             general_group.user_set.add(user)
             login(request, user)
             print('success')

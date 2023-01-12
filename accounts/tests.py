@@ -1,6 +1,7 @@
 from django.test import TestCase, Client
 from django.contrib.auth import get_user_model
 from django.urls import reverse
+from django.contrib.auth.models import Group
 
 from .forms import UserCreationForm
 
@@ -36,6 +37,8 @@ class SignUpPageTests(TestCase):
         self.response = self.client.get(url)
         self.username = 'testuser123'
         self.email = 'testuser123@email.com'
+        self.group = 'General'
+        
 
     def test_signup_page_is_returned(self):
         self.assertEqual(self.response.status_code, 200)
@@ -43,6 +46,10 @@ class SignUpPageTests(TestCase):
 
     def test_signup_new_user(self):
         new_user = get_user_model().objects.create_user(self.username, self.email)
+        new_group = Group.objects.create(name=self.group)
+        new_user.groups.add(new_group)
+
+        self.assertEqual(get_user_model().objects.all()[0].groups.all()[0].name, self.group)
         self.assertEqual(get_user_model().objects.all().count(), 1)
         self.assertEqual(get_user_model().objects.all()[0].username, self.username)
         self.assertEqual(get_user_model().objects.all()[0].email, self.email)
