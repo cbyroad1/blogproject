@@ -1,0 +1,28 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-6 justify-content-center">
+        <h3>Edit Your Blog Post Below</h3>
+            <div class="">
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+                <form class="myform" method="post">
+                    {% csrf_token %}
+                    {{form.media}}
+                    {{form|crispy}}
+                    <div class=""><button class="btn btn-primary">Update</button></div>  
+                </form>
+            </div>
+    </div>
+    <div class="col-sm-3">
+    </div>
+</div>
+{% endblock content %}

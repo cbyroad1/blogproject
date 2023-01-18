@@ -49,3 +49,18 @@ def viewCategory(request, pk):
 
     context = {'category':category, 'posts':posts}
     return render(request, 'categories.html', context)
+
+def editPost(request, pk):
+    post = BlogPost.objects.get(id=pk)
+
+    form = BlogPostForm(request.POST or None, instance=post)
+
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('view-post', pk)
+        else:
+            messages.error(request, 'There was an error validating your form')
+
+    context = {'post': post, 'form':form}
+    return render(request, 'edit_post.html', context)
