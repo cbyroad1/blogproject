@@ -50,5 +50,30 @@ class DeleteBlogPostTests(TestCase):
         self.assertFalse(BlogPost.objects.all())
 
 
+class EditBlogPostTest(TestCase):
+
+    def setUp(self):
+        self.title = 'My Post Title'
+        self.content = 'This is the test content of my test post'
+
+        self.category = Category.objects.create(name='Test-Category')
+        self.author = get_user_model().objects.create_user(username = 'testuser2', email = 'testuser2@email.com', password = 'testpass123')
+        self.blogpost = BlogPost.objects.create(title = self.title, category = self.category, content = self.content, author = self.author)
+
+        url = reverse('edit-post', kwargs={'pk': self.blogpost.id})
+        self.response = self.client.get(url)
+
+    def test_url_returns_edit_blog_post_page(self):
+        self.assertEqual(self.response.status_code, 200)
+        self.assertTemplateUsed('edit_post.html')
+
+    def test_blog_post_can_be_edited(self):
+        BlogPost.objects.filter(pk=self.blogpost.id).update(content='Update Success')
+
+        self.blogpost.refresh_from_db()
+        self.assertEqual(self.blogpost.content, 'Update Success')
+
+
+
 
     
