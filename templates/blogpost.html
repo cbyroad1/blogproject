@@ -30,6 +30,16 @@
                                     <p>{{comment.comment}}</p>
                                 </div>
                                 {% endfor %}
+
+                                <div id="comments-input" class="form-group">
+                                    <form method="post" action="add-comment" >
+                                        {% csrf_token %}
+                                        <label for="">Write your comment below</label>
+                                        <textarea class="form-control" name="comment" id="" cols="60" rows="5"></textarea>
+                                        <input type="hidden" name="commentPost" value={{post.id}}>
+                                        <button class="btn btn-primary">Comment</button>
+                                    </form>
+                                </div>
                             </div>
                             </div>
                             </div> 

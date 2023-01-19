@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 # Create your views here.
 from .forms import BlogPostForm
-from .models import BlogPost, Category
+from .models import BlogPost, Category, Comments
 
 def createPost(request):
     form = BlogPostForm()        
@@ -21,6 +21,7 @@ def createPost(request):
 
 def viewPost(request, pk):
     post = BlogPost.objects.get(id=pk)
+    print(post.id)
     author = BlogPost.objects.values_list('author__username', flat=True).get(id=pk)
     # need to query for comments that only apply for the single blogpost
     comments = post.comments_set.all()
@@ -64,3 +65,14 @@ def editPost(request, pk):
 
     context = {'post': post, 'form':form}
     return render(request, 'edit_post.html', context)
+
+def addComment(request):
+    if request.method == 'POST':
+        comment = request.POST['comment']
+        author = request.user
+        postid = request.POST["commentPost"]
+        post = BlogPost.objects.get(id=postid)
+        comment = Comments.objects.create(comment=comment, author=author, post=post)
+        comment.save()
+
+    return redirect('view-post', postid)

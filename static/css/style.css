@@ -66,6 +66,14 @@
     margin: 25px;
 }
 
+#comments-input{
+  margin-top: 25px;
+}
+
+#comments-input textarea{
+  margin: 25px 0px 25px 0px;
+}
+
 
 /* Lira */
 
