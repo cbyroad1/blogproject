@@ -27,4 +27,5 @@ class Comments(models.Model):
     comment = models.TextField()
     post = models.ForeignKey('BlogPost', on_delete=models.CASCADE)
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    date_posted = models.DateTimeField(auto_now_add=True)
     

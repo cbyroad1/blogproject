@@ -26,7 +26,8 @@
                                 <hr>
                                 {% for comment in comments %}
                                 <div class="individual-comment">
-                                    <p>{{comment.author}}</p>
+                                        <span>{{comment.author}}</span>
+                                        <span>{{comment.date_posted}}</span>
                                     <div class="comment-content-box border border-light rounded">
                                         <p>{{comment.comment}}</p>
                                     </div>

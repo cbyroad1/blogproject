@@ -1,18 +1,10 @@
 
 /* navbar */
 
-/* .header-flex{
-    display: flex;
-    justify-content: right;
-    padding: 0px;
-    margin-bottom: 0px;
-    height: min-content;
-} */
-
-
-
 .nav-container{
     height: 50px;
+    background-color: #e1edfd;
+    
 }
 
 .nav-link-container{
@@ -24,6 +16,7 @@
     font-size: larger;
     margin: 0px 10px 0px 10px;
 }
+
 
 
 /* Header */
@@ -52,6 +45,11 @@
 
 .footer hr{
   margin-top: 200px;
+  background-color: #f9fcff;
+}
+
+.container-fluid{
+  background-color: #e1edfd;
 }
 
 /* Sign Up and Login Page */
@@ -91,10 +89,15 @@
   margin: 10px 0px 10px 0px;
 }
 
-.individual-comment p{
-  margin-top: 5px;
+.individual-comment span:nth-child(1){
+  margin: 5px 0px 0px 0px;
+  font-weight: bold;
 }
 
+.individual-comment span:nth-child(2){
+  font-size: smaller;
+  font-weight: lighter;
+}
 
 
 
