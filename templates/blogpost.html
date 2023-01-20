@@ -4,10 +4,10 @@
 
      <!-- content -->
         <div class="container-fluid">
-            <div class="row single-blog-post">
-                <div class="col-sm-3"></div>
-                    <div class="col-lg-6">
-                        <div class=" " style="width: auto;">
+            <div class="row single-blog-post-row">
+                <div class="col-sm-2"></div>
+                    <div class="col-lg-8 shadow p-3 mb-5 bg-white rounded">
+                        <div class=" blog-content-wrapper " style="width: auto;">
                             <h2 class="" style="text-align: center;">{{post.title}}</h2>
                             <br>
                             <div class="">
@@ -26,8 +26,11 @@
                                 <hr>
                                 {% for comment in comments %}
                                 <div class="individual-comment">
-                                    <small>By: {{comment.author}}</small>
-                                    <p>{{comment.comment}}</p>
+                                    <p>{{comment.author}}</p>
+                                    <div class="comment-content-box border border-light rounded">
+                                        <p>{{comment.comment}}</p>
+                                    </div>
+                                    <hr class="w-25">
                                 </div>
                                 {% endfor %}
 
@@ -44,7 +47,7 @@
                             </div>
                             </div> 
                         </div>
-                            <div class="col-sm-3"></div>
+                            <div class="col-sm-2"></div>
                     </div>
             </div>
         </div>

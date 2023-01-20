@@ -30,7 +30,7 @@
 
 #banner-pic{
     width: 100%;
-    max-height: auto;
+    height: 100%;
     display: block;
     margin: 0px;
 }
@@ -40,11 +40,19 @@
 }
 
 .header{
-    height: 300px;
-    margin-bottom: 50px;
+    height: 200px;
+    margin: 50px 0px 50px 0px;
 }
 
+/* Footer */
 
+.footer{
+  height: 300px;
+}
+
+.footer hr{
+  margin-top: 200px;
+}
 
 /* Sign Up and Login Page */
 
@@ -62,8 +70,13 @@
 
 
 /* single blog post */
-.single-blog-post{
+.single-blog-post-row{
     margin: 25px;
+
+}
+
+.blog-content-wrapper{
+  padding: 30px;
 }
 
 #comments-input{
@@ -74,13 +87,28 @@
   margin: 25px 0px 25px 0px;
 }
 
+.individual-comment{
+  margin: 10px 0px 10px 0px;
+}
+
+.individual-comment p{
+  margin-top: 5px;
+}
+
+
+
 
 /* Lira */
 
 
 
 .blog-single-post{
-    margin: 75px 0px 75px 0px;
+    margin: 30px 0px 75px 0px;
+
+}
+
+.post-content{
+  padding: 30px;
 }
 
 .pst-titel a{
@@ -145,8 +173,13 @@
   }
 
   /* Categories */
+
+
 .choose-category{
-    margin-top: 75px;
+    margin: 30px 0px 75px 0px;
+    width: 75%;
+    text-align: center;
+    background-color: cornsilk;
 }
 
   .category-list li {

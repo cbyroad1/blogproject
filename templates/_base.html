@@ -16,8 +16,8 @@
     <body style="font-family: 'Red Hat Display', sans-serif; ">
         <!-- navbar  -->
         <div class="row nav-container">
-            <div class="col-sm-2"></div>
-                <div class="col-lg-8 nav-link-container">
+            <div class="col-sm-1"></div>
+                <div class="col-lg-10 nav-link-container">
                     <nav class="navbar navbar-expand-lg navbar-light justify-content-end">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -36,12 +36,12 @@
                         </div>
                     </nav>
                 </div>
-            <div class="col-sm-2"></div>
+            <div class="col-sm-1"></div>
         </div>
         <hr style="margin: 0px;">
         <div class="row header">
             <div class="col-lg-1"></div>
-            <div class="col-lg-10 banner-container"> <img id='banner-pic' src="{% static 'images/newcameron.jpeg' %}" alt=""> </div>
+            <div class="col-lg-10 banner-container"> </div>
             <div class="col-lg-1"></div>
         </div>
         {% block content %}
@@ -49,6 +49,10 @@
 
 
         {% endblock content %}
+        <div class="row footer">
+            <hr>
+            <div class="col-12"></div>
+        </div>
         <script src="" async defer></script>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

@@ -9,7 +9,7 @@
         <div>
             {% if posts %}
                 {% for post in posts %}
-                <div class="blog-single-post pb-60">
+                <div class="blog-single-post pb-60 shadow p-3 mb-5 bg-white rounded">
                     <div class="post-content">
                       <div class="post-titel-author pt-30 pb-15">
                         <h3><a href="{% url 'view-post' post.id %}">{{post.title}}</a></h3>
@@ -37,6 +37,7 @@
             {% else %}
             <p>There are no posts for this category</p>
             {% endif %}
+            <h6> <a href="{% url 'home' %}">Go Back To Blog</a></h6>
         </div>  
     </div>
     <div class="col-lg-2"></div>
