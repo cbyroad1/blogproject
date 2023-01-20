@@ -34,7 +34,7 @@
                                     <hr class="w-25">
                                 </div>
                                 {% endfor %}
-
+                                {% if user.is_authenticated %}
                                 <div id="comments-input" class="form-group">
                                     <form method="post" action="add-comment" >
                                         {% csrf_token %}
@@ -44,6 +44,7 @@
                                         <button class="btn btn-primary">Comment</button>
                                     </form>
                                 </div>
+                                {% endif %}
                             </div>
                             </div>
                             </div> 

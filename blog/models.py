@@ -11,9 +11,13 @@ class BlogPost(models.Model):
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE, null=True, blank=False)
+    likes = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
+
+    def add_like(self):
+        self.likes += 1
 
 
 class Category(models.Model):
