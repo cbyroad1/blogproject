@@ -40,26 +40,32 @@
 /* Footer */
 
 .footer{
-  height: 300px;
-}
-
-.footer hr{
-  margin-top: 200px;
-  background-color: #f9fcff;
+  margin-top: auto;
+  min-height: 150px;
+  background-color: #fafafa;
 }
 
 .container-fluid{
+  min-height: 100vh;
   background-color: #e1edfd;
+  padding-top: 50px;
 }
 
 /* Sign Up and Login Page */
 
-
+.register-login-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px;
+}
 .login-signup-form div{
   margin: 15px 0px 15px 0px;
 }
 
-
+.login-signup-form div{
+  margin: 15px 0px 15px 0px;
+}
 
 .signup-form{
   width: 275px;
@@ -71,6 +77,15 @@
 .single-blog-post-row{
     margin: 25px;
 
+}
+
+.single-blog-header > *{
+  text-align: center;
+}
+
+.single-blog-header p{
+  font-size: smaller;
+  font-weight: lighter;
 }
 
 .blog-content-wrapper{
@@ -177,12 +192,14 @@
 
   /* Categories */
 
+.category-posts{
+  height: max-content;
+}
 
 .choose-category{
     margin: 30px 0px 75px 0px;
     width: 75%;
     text-align: center;
-    background-color: cornsilk;
 }
 
   .category-list li {

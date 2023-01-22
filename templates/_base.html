@@ -41,16 +41,17 @@
         <hr style="margin: 0px;">
         <div class="row header">
             <div class="col-lg-1"></div>
-            <div class="col-lg-10 banner-container"> </div>
+            <div class="col-lg-10 banner-container"> <img src="{% static 'images/banner.jpg' %}" alt=""></div>
             <div class="col-lg-1"></div>
         </div>
+        <div class="container-fluid">
         {% block content %}
 
 
 
         {% endblock content %}
+        </div>
         <div class="row footer">
-            <hr>
             <div class="col-12"></div>
         </div>
         <script src="" async defer></script>

@@ -8,12 +8,16 @@
                 <div class="col-sm-2"></div>
                     <div class="col-lg-8 shadow p-3 mb-5 bg-white rounded">
                         <div class=" blog-content-wrapper " style="width: auto;">
-                            <h2 class="" style="text-align: center;">{{post.title}}</h2>
+                            <div class="single-blog-header">
+                                <h2 class="">{{post.title}}</h2>
+                                <p>{{post.author}}</p>
+                                <p>{{post.date_created}}</p>
+                                
+                            </div>
                             <br>
                             <div class="">
                             <div class="flex-row" style="margin: 20px;">
                                 <img class="profile-pic" src="images/IMG_8750 (1).jpeg" alt="">
-                                <span>By: {{post.author}}</span>
                                  {% if request.user.username == author %}
                                 <span><a href="{% url 'edit-post' post.id %}">Edit</a></span>
                                 <span><a href="{% url 'delete-post' post.id %}">Delete</a></span>
@@ -43,6 +47,10 @@
                                         <input type="hidden" name="commentPost" value={{post.id}}>
                                         <button class="btn btn-primary">Comment</button>
                                     </form>
+                                </div>
+                                {% else %}
+                                <div>
+                                    <p><a href="{% url 'login' %}">Log in</a> to leave a comment</p>
                                 </div>
                                 {% endif %}
                             </div>

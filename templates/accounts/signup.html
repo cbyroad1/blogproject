@@ -3,12 +3,13 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-sm-5">
+    <div class="col-sm-4">
     </div>
-    <div class="col-sm-3 justify-content-center">
+    <div class="col-sm-4 justify-content-center">
+        <div class="register-login-div shadow bg-white rounded">
         <h3>Sign Up Below</h3>
             <div class="signup-form">   
-                <form method="post">
+                <form class="login-signup-form" method="post">
                     {% csrf_token %}
                     <div class="myform">{{form.username|as_crispy_field}}</div>
                     <div class="myform">{{form.email|as_crispy_field}}</div>
@@ -18,6 +19,7 @@
                 </form>
                 <a href="{% url 'login' %}">Already have an account? Click here to Login</a>
             </div>
+        </div>
     </div>
     <div class="col-sm-4">
     </div>

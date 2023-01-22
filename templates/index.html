@@ -4,7 +4,6 @@
 
 {% block content %}
 <!-- content section; blogposts  -->
-<div class="container-fluid">
   <div class="content row">
     <div class="col-sm-1">
     </div>
@@ -54,7 +53,7 @@
 									<ul>
                   {% for post in posts %}
 										<li>
-											<a href="#">{{post.title}}</a>
+											<a href="{% url 'view-post' post.id %}">{{post.title}}</a>
 										</li>					
                   {% endfor %}						
 									</ul>
@@ -62,5 +61,4 @@
 							</div>
     <div class="col-sm-1"></div>
     </div>
-</div>
 {% endblock content %}
