@@ -10,32 +10,33 @@
     <div class="col-lg-7" id="home-blog-content">
 		{% if posts %}
             {% for post in posts %}
-            <div class="blog-single-post pb-60 shadow p-3 mb-5 bg-white rounded">
-              <div class="post-content">
-                <div class="post-titel-author pt-30 pb-15">
-                  <h3><a href="{% url 'view-post' post.id %}">{{post.title}}</a></h3>
-				  <small>In {{post.category}}</small><br>
-                  <span>{{post.date_created}}   /  <a href="#">By : {{post.author}}</a></span>
+            <div class="individual-post">
+              <div class="">
+                <div class="post-header">
+                  <h3><a class="" href="{% url 'view-post' post.id %}">{{post.title}}</a></h3>
+				          <small>In {{post.category}}</small><br>
+                  <span>{{post.date_created}}   /  <span class="">By : {{post.author}}</span>
                 </div>
-                <div class="post-srt-content pb-20 border-bottom">
+                <div class="individual-post-content">
                   <p>{{post.content|truncatechars:250|safe}}</p>
-                  <a href="{% url 'view-post' post.id %}">CONTINUE READING <i class="icofont icofont-long-arrow-right"></i></a>
                 </div>
-                <div class="post-info pt-15">
-                  <span class="post-txt mr-25">
+                <div class="post-footer">
+                  <a class="" href="{% url 'view-post' post.id %}">Read More <i class="icofont icofont-long-arrow-right"></i></a>
+                  {% comment %} <span class="">
                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i>{{post.likes}} Likes</a>
                   </span>
-                  <span class="post-txt mr-25">
+                  <span class="">
                     <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>{{post.number_of_comments}} Comments</a>
-                  </span>
+                  </span> {% endcomment %}
                 </div>
               </div>
+              <hr>
             </div>
           {% endfor %}
 		{% endif %}
         </div>
     <div class="col-sm-3" style="margin: 0px 0px 0px 0px;">
-							<div class="choose-category float-end shadow p-3 mb-5 bg-white rounded">
+							<div class="choose-category">
 								<h4>Categories</h4>
 								<div class="category-list">
 									<ul>
@@ -47,7 +48,7 @@
 									</ul>
 								</div>
 							</div>
-							<div class="choose-category float-end shadow p-3 mb-5 bg-white rounded ">
+							<div class="choose-category">
 								<h4>Recent Posts</h4>
 								<div class="category-list">
 									<ul>
@@ -60,5 +61,5 @@
 								</div>
 							</div>
     <div class="col-sm-1"></div>
-    </div>
+  </div>
 {% endblock content %}

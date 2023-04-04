@@ -2,9 +2,7 @@
 /* navbar */
 
 .nav-container{
-    height: 50px;
-    background-color: #e1edfd;
-    
+    height: 75px;    
 }
 
 .nav-link-container{
@@ -13,7 +11,7 @@
 }
 
 .navbar-nav li{
-    font-size: larger;
+    font-size: medium;
     margin: 0px 10px 0px 10px;
 }
 
@@ -47,7 +45,6 @@
 
 .container-fluid{
   min-height: 100vh;
-  background-color: #e1edfd;
   padding-top: 50px;
 }
 
@@ -72,25 +69,40 @@
 }
 
 
+/* HomePage Cards */
+
+#home-blog-content{
+  border-right: 1px solid #dddddd;
+  padding: 0px 150px 100px 0px;
+  margin-right: 75px;
+}
+
+.individual-post{
+  margin: 25px 0px;
+}
+
+.post-header span{
+  font-size: smaller;
+}
+
+.post-header a{
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.individual-post-content p{
+  font-size: small;
+}
+
+.post-footer a{
+  text-decoration: none;
+  font-size: small;
+}
+
+
 
 /* single blog post */
-.single-blog-post-row{
-    margin: 25px;
-
-}
-
-.single-blog-header > *{
-  text-align: center;
-}
-
-.single-blog-header p{
-  font-size: smaller;
-  font-weight: lighter;
-}
-
-.blog-content-wrapper{
-  padding: 30px;
-}
 
 #comments-input{
   margin-top: 25px;
@@ -101,122 +113,24 @@
 }
 
 .individual-comment{
-  margin: 10px 0px 10px 0px;
+  margin: 20px 0px;
+}
+
+
+.comment-content-box p{
+  font-size: x-small;
 }
 
 .individual-comment span:nth-child(1){
   margin: 5px 0px 0px 0px;
-  font-weight: bold;
+  font-size: smaller;
 }
 
 .individual-comment span:nth-child(2){
-  font-size: smaller;
+  font-size: x-small;
   font-weight: lighter;
 }
 
 
 
-/* Lira */
-
-
-
-.blog-single-post{
-    margin: 30px 0px 75px 0px;
-
-}
-
-.post-content{
-  padding: 30px;
-}
-
-.pst-titel a{
-    background: #fafafa none repeat scroll 0 0;
-    bottom: -12px;
-    color: #a1a1a1;
-    font-size: 12px;
-    font-weight: 600;
-    height: 25px;
-    left: 0;
-    line-height: 27px;
-    margin: 0 auto;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    text-transform: uppercase;
-    width: 120px;
-  }
-
-  .post-titel-author h3 a{
-      color: inherit;
-  }
-
-  .pst-titel a:hover,.blog-ph .pst-titel a:hover{color:#666;}
-  .post-titel-author h3 a:hover{color:#666;}
-  .post-titel-author > span,.post-txt a {
-    color: #a1a1a1;
-    font-family: open sans;
-    font-size: 12px;
-  }
-  
-  .post-titel-author > span a {
-    color: #707070;
-    font-weight: 700;
-  }
-  .post-titel-author > span a:hover,.post-srt-content > a:hover,.post-txt a:hover,.social-middle ul li a:hover,.category-list ul li a:hover,.twist-single ul li a:hover{color:#383838;}
-  .post-srt-content > a {
-    color: #a1a1a1;
-    font-size: 12px;
-    font-weight: 500;
-    transition: all 0.3s ease 0s;
-  }
-  .post-srt-content > a i {
-    margin-left: 6px;
-  }
-  .post-txt{
-    margin-right: 25px;
-  }
-  .post-txt:last-child{
-    margin-right: 0;
-  }
-  .post-txt a{
-    font-family:"Poppins",sans-serif;
-    transition:.3s;
-    white-space: nowrap;
-  }
-  .post-txt a i {
-    margin-right: 6px;
-  }
-  .embed-responsive {
-    overflow: initial;
-  }
-
   /* Categories */
-
-.category-posts{
-  height: max-content;
-}
-
-.choose-category{
-    margin: 30px 0px 75px 0px;
-    width: 75%;
-    text-align: center;
-}
-
-  .category-list li {
-    display: block;
-  }
-
-  .category-list ul{
-      padding: 0px;
-  }
-  .category-list ul li a {
-    color: #606060;
-    display: block;
-    padding: 10px 0;
-  }
-  .category-list ul li a span {
-    float: right;
-  }
-  .category-list li:last-child {
-    padding-bottom: 10px;
-  }
