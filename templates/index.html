@@ -4,16 +4,12 @@
 
 {% block content %}
 <!-- content section; blogposts  -->
-  <div class="content row">
-    <div class="col-sm-1">
-    </div>
-    <div class="col-lg-7" id="home-blog-content">
 		{% if posts %}
             {% for post in posts %}
             <div class="individual-post">
               <div class="">
                 <div class="post-header">
-                  <h3><a class="" href="{% url 'view-post' post.id %}">{{post.title}}</a></h3>
+                  <h5><a class="" href="{% url 'view-post' post.id %}">{{post.title}}</a></h5>
 				          <small>In {{post.category}}</small><br>
                   <span>{{post.date_created}}   /  <span class="">By : {{post.author}}</span>
                 </div>
@@ -22,44 +18,10 @@
                 </div>
                 <div class="post-footer">
                   <a class="" href="{% url 'view-post' post.id %}">Read More <i class="icofont icofont-long-arrow-right"></i></a>
-                  {% comment %} <span class="">
-                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i>{{post.likes}} Likes</a>
-                  </span>
-                  <span class="">
-                    <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>{{post.number_of_comments}} Comments</a>
-                  </span> {% endcomment %}
                 </div>
               </div>
               <hr>
             </div>
           {% endfor %}
 		{% endif %}
-        </div>
-    <div class="col-sm-3" style="margin: 0px 0px 0px 0px;">
-							<div class="choose-category">
-								<h4>Categories</h4>
-								<div class="category-list">
-									<ul>
-										{% for category in categories %}
-										<li>
-											<a href="{% url 'category-view' category.id%}">{{category}}<span></span></a>
-										</li>
-										{% endfor %}
-									</ul>
-								</div>
-							</div>
-							<div class="choose-category">
-								<h4>Recent Posts</h4>
-								<div class="category-list">
-									<ul>
-                  {% for post in posts %}
-										<li>
-											<a href="{% url 'view-post' post.id %}">{{post.title}}</a>
-										</li>					
-                  {% endfor %}						
-									</ul>
-								</div>
-							</div>
-    <div class="col-sm-1"></div>
-  </div>
 {% endblock content %}

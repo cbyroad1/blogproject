@@ -40,11 +40,44 @@
         </div>
         <hr style="margin: 0px;">
         <div class="container-fluid">
-        {% block content %}
+            <div class="content row">
+                <div class="col-sm-1"></div>
+                <div class="col-lg-7" id="home-blog-content">
+                    {% block content %}
 
-
-
-        {% endblock content %}
+                    {% endblock content %}
+                </div>
+                <div class="col-sm-3" style="margin: 0px 0px 0px 0px;">
+                    <div>
+                        <h5>Recommended Resources</h5> 
+                    
+                    <div>
+                    <div class="choose-category">
+                        <h4>Categories</h4>
+                        <div class="category-list">
+                            <ul>
+                                {% for category in categories %}
+                                <li>
+                                    <a href="{% url 'category-view' category.id%}">{{category}}<span></span></a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="choose-category">
+                        <h4>Recent Posts</h4>
+                        <div class="category-list">
+                            <ul>
+                            {% for post in posts %}
+                                <li>
+                                    <a href="{% url 'view-post' post.id %}">{{post.title}}</a>
+                                </li>					
+                            {% endfor %}						
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-1"></div>
+              </div>
         </div>
         <div class="row footer">
             <div class="col-12"></div>

@@ -45,7 +45,7 @@
 
 .container-fluid{
   min-height: 100vh;
-  padding-top: 50px;
+  padding-top: 75px;
 }
 
 /* Sign Up and Login Page */
@@ -73,26 +73,25 @@
 
 #home-blog-content{
   border-right: 1px solid #dddddd;
-  padding: 0px 150px 100px 0px;
+  padding: 0px 50px 100px 0px;
   margin-right: 75px;
-}
-
-.individual-post{
-  margin: 25px 0px;
 }
 
 .post-header span{
   font-size: smaller;
+  color: dimgray;
 }
 
 .post-header a{
   text-decoration: none;
   color: black;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .individual-post-content p{
   font-size: small;
+  color: dimgray;
 }
 
 .post-footer a{
@@ -134,3 +133,17 @@
 
 
   /* Categories */
+
+  .choose-category h4{
+    font-size: medium;
+  }
+
+  .choose-category ul{
+    list-style: none;
+    padding: 0px;
+  }
+
+  .category-list a{
+    text-decoration: none;
+    font-size: small;
+  }

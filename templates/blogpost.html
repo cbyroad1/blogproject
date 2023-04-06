@@ -3,78 +3,45 @@
 {% load static %}
 
 {% block content %}
-<!-- content section; blogposts  -->
-  <div class="content row">
-    <div class="col-sm-1">
+<div class="individual-post">
+    <div class="">
+        <div class="post-header">
+            <h3><a class="">{{post.title}}</a></h3>
+                    <small>In {{post.category}}</small><br>
+            <span>{{post.date_created}}   /  <span class="">By : {{post.author}}</span>
+        </div>
+        <div class="individual-post-content">
+            <p>{{post.content|safe}}</p>
+        </div>
     </div>
-    <div class="col-lg-7" id="home-blog-content">
-            <div class="individual-post">
-              <div class="">
-                <div class="post-header">
-                  <h3><a class="">{{post.title}}</a></h3>
-				          <small>In {{post.category}}</small><br>
-                  <span>{{post.date_created}}   /  <span class="">By : {{post.author}}</span>
-                </div>
-                <div class="individual-post-content">
-                  <p>{{post.content|safe}}</p>
-                </div>
-              </div>
-              <hr>
-              <div class="comment-section">
-                <h5>Comments</h5>
-                {% for comment in comments %}
-                <div class="individual-comment">
-                        <span>{{comment.author}}</span>
-                        <span>{{comment.date_posted}}</span>
-                    <div class="comment-content-box">
-                        <p>{{comment.comment}}</p>
-                    </div>
-                    <hr class="w-25">
-                </div>
-                {% endfor %}
-                {% if user.is_authenticated %}
-                <div id="comments-input" class="form-group">
-                    <form method="post" action="add-comment" >
-                        {% csrf_token %}
-                        <label for="">Write your comment below</label>
-                        <textarea class="form-control" name="comment" id="" cols="60" rows="5"></textarea>
-                        <input type="hidden" name="commentPost" value={{post.id}}>
-                        <button class="btn btn-primary">Comment</button>
-                    </form>
-                </div>
-                {% else %}
-                <div>
-                    <p><a href="{% url 'login' %}">Log in</a> to leave a comment</p>
-                </div>
-                {% endif %}
+        <hr>
+    <div class="comment-section">
+    <h5>Comments</h5>
+    {% for comment in comments %}
+    <div class="individual-comment">
+        <span>{{comment.author}}</span>
+        <span>{{comment.date_posted}}</span>
+            <div class="comment-content-box">
+                <p>{{comment.comment}}</p>
             </div>
-            </div>
+                <hr class="w-25">
+    </div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+        <div id="comments-input" class="form-group">
+            <form method="post" action="add-comment" >
+                {% csrf_token %}
+                <label for="">Write your comment below</label>
+                <textarea class="form-control" name="comment" id="" cols="60" rows="5"></textarea>
+                <input type="hidden" name="commentPost" value={{post.id}}>
+                <button class="btn btn-primary">Comment</button>
+            </form>
         </div>
-    <div class="col-sm-3" style="margin: 0px 0px 0px 0px;">
-        <div class="choose-category">
-            <h4>Categories</h4>
-            <div class="category-list">
-                <ul>
-                    {% for category in categories %}
-                    <li>
-                        <a href="{% url 'category-view' category.id%}">{{category}}<span></span></a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
+    {% else %}
+        <div>
+            <p><a href="{% url 'login' %}">Log in</a> to leave a comment</p>
         </div>
-        <div class="choose-category">
-            <h4>Recent Posts</h4>
-            <div class="category-list">
-                <ul>
-                    {% for post in posts %}
-                    <li>
-                        <a href="{% url 'view-post' post.id %}">{{post.title}}</a>
-                    </li>					
-                    {% endfor %}						
-                </ul>
-            </div>
-        </div>
-    <div class="col-sm-1"></div>
-  </div>
+    {% endif %}
+    </div>
+</div>
 {% endblock content %}

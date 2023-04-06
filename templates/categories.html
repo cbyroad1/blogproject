@@ -1,46 +1,32 @@
 {% extends '_base.html' %}
 
 {% block content %}
-
-<div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8 category-posts">
         <h3>Posts in {{category}} </h3>  
+        <br>
+        <br>
         <div>
-            {% if posts %}
-                {% for post in posts %}
-                <div class="blog-single-post pb-60 shadow p-3 mb-5 bg-white rounded">
-                    <div class="post-content">
-                      <div class="post-titel-author pt-30 pb-15">
-                        <h3><a href="{% url 'view-post' post.id %}">{{post.title}}</a></h3>
-                        <small>In {{post.category}}</small><br>
-                        <span>{{post.date_created}}   /  <a href="#">By : {{post.author}}</a></span>
-                      </div>
-                      <div class="post-srt-content pb-20 border-bottom">
-                        <p>{{post.content|truncatechars:250|safe}}</p>
-                        <a href="{% url 'view-post' post.id %}">CONTINUE READING <i class="icofont icofont-long-arrow-right"></i></a>
-                      </div>
-                      <div class="post-info pt-15">
-                        <span class="post-txt mr-25">
-                          <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i>20 Like</a>
-                        </span>
-                        <span class="post-txt mr-25">
-                          <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>08 Comments</a>
-                        </span>
-                        <span class="post-txt mr-25">
-                          <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i>50 Shares</a>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                {% endfor %}
-            {% else %}
+          {% if posts %}
+          {% for post in posts %}
+          <div class="individual-post">
+            <div class="">
+              <div class="post-header">
+                <h5><a class="" href="{% url 'view-post' post.id %}">{{post.title}}</a></h5>
+                <small>In {{post.category}}</small><br>
+                <span>{{post.date_created}}   /  <span class="">By : {{post.author}}</span>
+              </div>
+              <div class="individual-post-content">
+                <p>{{post.content|truncatechars:250|safe}}</p>
+              </div>
+              <div class="post-footer">
+                <a class="" href="{% url 'view-post' post.id %}">Read More <i class="icofont icofont-long-arrow-right"></i></a>
+              </div>
+            </div>
+            <hr>
+          </div>
+        {% endfor %}
+        {% else %}
             <p>There are no posts for this category</p>
-            {% endif %}
+        {% endif %}
             <h6> <a href="{% url 'home' %}">Go Back To Blog</a></h6>
-        </div>  
-    </div>
-    <div class="col-lg-2"></div>
-</div>
-
+        </div>
 {% endblock content %}
