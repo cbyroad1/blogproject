@@ -42,16 +42,12 @@
         <div class="container-fluid">
             <div class="content row">
                 <div class="col-sm-1"></div>
-                <div class="col-lg-7" id="home-blog-content">
+                <div class="col-sm-7" id="home-blog-content">
                     {% block content %}
 
                     {% endblock content %}
                 </div>
-                <div class="col-sm-3" style="margin: 0px 0px 0px 0px;">
-                    <div>
-                        <h5>Recommended Resources</h5> 
-                    
-                    </div>
+                <div class="col-sm-3 sidebar">
                     <div class="choose-category">
                         <h4>Categories</h4>
                         <div class="category-list">
@@ -76,8 +72,20 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-1"></div>
+                    <hr>
+                    <div class="rec-section">
+                        <h5>Recommended Resources</h5> 
+                        <div class="sidebar-images">
+                        <p>Automate the Boring Stuff With Python</p>
+                        <img src="{% static 'images/automate_boring_stuff.jpeg' %}">
+                        </div>
+                        <div class="sidebar-images">
+                            <p>Automate the Boring Stuff With Python</p>
+                            <img src="{% static 'images/django_for_prof.jpeg' %}">
+                        </div>
+                    </div>
               </div>
+            <div class="col-sm-1"></div>
         </div>
         <div class="row footer">
             <div class="col-12"></div>

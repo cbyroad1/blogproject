@@ -63,10 +63,10 @@
 .login-signup-form div{
   margin: 15px 0px 15px 0px;
 }
-
+/* 
 .signup-form{
   width: 275px;
-}
+} */
 
 
 /* HomePage Cards */
@@ -74,7 +74,7 @@
 #home-blog-content{
   border-right: 1px solid #dddddd;
   padding: 0px 50px 100px 0px;
-  margin-right: 75px;
+  margin-right: 35px;
 }
 
 .post-header span{
@@ -132,18 +132,38 @@
 
 
 
-  /* Categories */
+/* Sidebar */
+.sidebar{
+  padding: 0px;
+  margin: 0px;
+}
 
-  .choose-category h4{
-    font-size: medium;
-  }
+.choose-category h4{
+  font-size: medium;
+}
 
-  .choose-category ul{
-    list-style: none;
-    padding: 0px;
-  }
+.choose-category ul{
+  list-style: none;
+  padding: 0px;
+}
 
-  .category-list a{
-    text-decoration: none;
-    font-size: small;
-  }
+.category-list a{
+  text-decoration: none;
+  font-size: small;
+}
+
+.rec-section{
+  margin-top: 25px;
+}
+
+.sidebar-images{
+  margin: 25px 0px;
+}
+
+.sidebar-images p{
+  font-weight: lighter;
+}
+
+.sidebar-images img{
+  height: 200px;
+}
