@@ -5,3 +5,4 @@ sqlparse==0.4.3
 django-crispy-forms==1.14.0
 django-ckeditor==6.5.1
 environs[django]==9.5.0
+boto3==1.26.118

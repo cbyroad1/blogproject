@@ -1,0 +1,30 @@
+
+
+service: contactservice
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+  iamRoleStatements:
+    - Effect: Allow
+      Action: 
+        - ses:*
+      Resource: '*'
+        
+
+functions:
+  sendEmail:
+    handler: handler.sendEmail
+    events:
+      - http:
+          path: /sendEmail
+          method: post
+
+
+useDotenv: true
+
+plugins:
+  - serverless-python-requirements
+  - serverless-dotenv-plugin

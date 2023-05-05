@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+
+
+{% block content %}
+
+<div class="contact-page">
+    <h3>Contact Me</h3>
+    <p>Fill out the required fields below and hit "send" and we will get back to you as soon as possible</p>
+    <div class="contact-form-wrapper">
+        <form id="contact-form" method="post">
+            {% csrf_token %}
+            <div class="myform">{{form.name|as_crispy_field}}</div>
+            <div class="myform">{{form.email|as_crispy_field}}</div>
+            <div class="myform">{{form.subject|as_crispy_field}}</div>
+            <div class="myform">{{form.message|as_crispy_field}}</div>
+            <div class="myform"><button class="btn btn-primary">Send</button></div>  
+        </form>
+    </div>
+</div> 
+
+{% endblock content %}

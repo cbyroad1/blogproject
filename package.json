@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "serverless": "^3.30.1",
+    "serverless-dotenv-plugin": "^6.0.0"
+  },
+  "devDependencies": {
+    "serverless-python-requirements": "^6.0.0"
+  }
+}

@@ -26,7 +26,7 @@
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-link"><a href="{% url 'home' %}" style="color: inherit; text-decoration: none;">Home</a></li>
                             <li class="nav-link">Blog</li>
-                            <li class="nav-link">Contact</li>
+                            <li class="nav-link"><a href="{% url 'contact' %}" style="color: inherit; text-decoration: none; ">Contact</a></li>
                             {% if user.is_authenticated %}
                             <li class="nav-link"><a href="{% url 'logout' %}" style="color: inherit; text-decoration: none; ">Logout</a></li>
                             {% else %}
